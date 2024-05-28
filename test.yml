@@ -1,6 +1,6 @@
 ---
 - name: Retrieve the committed configuration
-      juniper.device.config:
+      juniper.device.config
         retrieve: 'committed'
         diff: false
         check: false
