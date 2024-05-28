@@ -1,0 +1,20 @@
+---
+- name: Get Device Facts
+  hosts: dc1
+  connection: local
+  gather_facts: no
+
+  tasks:
+    - name: Checking NETCONF connectivity
+      wait_for: 
+        host: "{{ inventory_hostname }}"
+        port: 830 
+        timeout: 5
+
+    - name: Retrieving information from Junos devices
+      juniper.device.facts:
+        savedir: "{{ playbook_dir }}/output"
+
+    - name: Print version
+      debug:
+        var: junos.version
