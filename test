@@ -10,7 +10,3 @@
         host: "{{ inventory_hostname }}"
         port: 830 
         timeout: 5
-
-- name: Print version
-      debug:
-        var: junos.version
