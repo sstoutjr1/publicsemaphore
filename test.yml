@@ -1,0 +1,21 @@
+---
+- name: Test juniper.device.config module
+  hosts: all
+  gather_facts: false
+
+  tasks:
+################
+    - name: Retrieve the committed configuration
+      juniper.device.config:
+        retrieve: 'committed'
+        diff: false
+        check: false
+        commit: false
+      register: test1
+      ignore_errors: true
+      tags: [test1]
+
+    - name: Check TEST 1
+      ansible.builtin.assert:
+        that:
+          - test1.config
