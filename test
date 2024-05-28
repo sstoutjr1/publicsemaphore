@@ -1,6 +1,6 @@
 ---
 - name: Get Device Facts
-  hosts: dc1
+  hosts: all
   connection: local
   gather_facts: no
 
