@@ -1,10 +1,15 @@
 ---
-- name: Get Device Facts
-  hosts: all
-  connection: local
-  gather_facts: no
+    - name: Retrieve the committed configuration
+      juniper.device.config:
+        retrieve: 'committed'
+        diff: false
+        check: false
+        commit: false
+      register: test1
+      ignore_errors: true
+      tags: [test1]
 
-  tasks:
-    - name: Print version
-      debug:
-        var: junos.version
+    - name: Check TEST 1
+      ansible.builtin.assert:
+        that:
+          - test1.config
