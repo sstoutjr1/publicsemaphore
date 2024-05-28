@@ -5,7 +5,7 @@
 
   tasks:
 ################
-    - name: Retrieve the committed configuration
+    - name: blowup
       juniper.device.config:
         retrieve: 'committed'
         diff: false
