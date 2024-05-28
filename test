@@ -11,10 +11,6 @@
         port: 830 
         timeout: 5
 
-    - name: Retrieving information from Junos devices
-      juniper.device.facts:
-        savedir: "{{ playbook_dir }}/output"
-
-    - name: Print version
+- name: Print version
       debug:
         var: junos.version
