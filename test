@@ -1,4 +1,10 @@
 ---
+- name: Test juniper.device.config module
+  hosts: all
+  gather_facts: false
+
+  tasks:
+################
     - name: Retrieve the committed configuration
       juniper.device.config:
         retrieve: 'committed'
