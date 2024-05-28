@@ -5,10 +5,6 @@
   gather_facts: no
 
   tasks:
-    - name: Retrieving information from Junos devices
-      juniper.device.facts:
-        savedir: "{{ playbook_dir }}/output"
-
     - name: Print version
       debug:
         var: junos.version
