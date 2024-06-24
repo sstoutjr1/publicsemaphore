@@ -1,4 +1,4 @@
-- name: Run show version on remote devices
+#- name: Run show version on remote devices
   cisco.ios.ios_command:
     commands: show version
 
