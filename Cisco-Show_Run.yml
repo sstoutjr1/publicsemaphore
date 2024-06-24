@@ -6,17 +6,10 @@
     ###
     # Collect data
     #
-    - name: Gather facts (eos)
-      arista.eos.eos_facts:
-      when: ansible_network_os == 'arista.eos.eos'
 
     - name: Gather facts (ios)
       cisco.ios.ios_facts:
       when: ansible_network_os == 'cisco.ios.ios'
-
-    - name: Gather facts (vyos)
-      vyos.vyos.vyos_facts:
-      when: ansible_network_os == 'vyos.vyos.vyos'
 
     ###
     # Demonstrate variables
