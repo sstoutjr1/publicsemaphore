@@ -1,2 +1,2 @@
-cisco.ios.ios_command:
-  commands: show version
+cisco.ios.ios_config:
+    lines: hostname {{ inventory_hostname }}
