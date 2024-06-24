@@ -1,6 +1,6 @@
 ---
 - name: Cisco show version example
-  hosts: routers
+  hosts: ios
   gather_facts: false
 
   vars: # for execution environment
