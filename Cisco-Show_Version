@@ -1,0 +1,34 @@
+- name: Run show version and check to see if output contains IOS
+  cisco.ios.ios_command:
+    commands: show version
+    wait_for: result[0] contains IOS
+
+# output-
+
+# ok: [iosxeappliance] => {
+#     "changed": false,
+#     "invocation": {
+#         "module_args": {
+#             "commands": [
+#                 "show version"
+#             ],
+#             "interval": 1,
+#             "match": "all",
+#             "retries": 10,
+#             "wait_for": [
+#                 "result[0] contains IOS"
+#             ]
+#         }
+#     },
+#     "stdout": [
+#         "Cisco IOS XE Software, Version 17.03.04a\nCisco IOS Software [Amsterdam], Virtual XE Software ... register is 0x2102"
+#     ],
+#     "stdout_lines": [
+#         [
+#             "Cisco IOS XE Software, Version 17.03.04a",
+#             "Cisco IOS Software [Amsterdam], Virtual XE Software",
+#             "..."
+#             "Configuration register is 0x2102"
+#         ]
+#     ]
+# }
