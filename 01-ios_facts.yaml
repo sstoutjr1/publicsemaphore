@@ -1,8 +1,9 @@
 # Specify Hosts and Connection Type to use
 - hosts: hosts
-  vars:  ansible_network_os: cisco.ios.ios  # set for a play
+  vars:
+    ansible_network_os: cisco.ios.ios  # set for a play
   tasks:
-  - ios_command:
+    - ios_command:
         command: "{{ cmd }}"
       vars:
         ansible_network_os: cisco.ios.ios  # set for individual task
