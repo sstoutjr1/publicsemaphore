@@ -1,12 +1,7 @@
 # Specify Hosts and Connection Type to use
-- hosts: all
-  vars:
-    ansible_network_os: cisco.ios.ios  # set for a play
-  tasks:
-    - ios_command:
-        command: "{{ cmd }}"
-      vars:
-        ansible_network_os: cisco.ios.ios  # set for individual task
+- hosts: hosts
+  connection: ansible.netcommon.network_cli
+  gather_facts: no
 
   tasks:
     - name: Get IOS Facts
