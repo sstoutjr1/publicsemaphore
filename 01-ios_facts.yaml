@@ -1,5 +1,5 @@
 # Specify Hosts and Connection Type to use
- - hosts: all
+ - hosts: hosts
   connection: ansible.netcommon.network_cli
   gather_facts: no
   vars:
